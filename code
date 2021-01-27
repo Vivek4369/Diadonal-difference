@@ -1,0 +1,40 @@
+#include <assert.h>
+#include <ctype.h>
+#include <limits.h>
+#include <math.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main()
+{
+    int n,m,d1=0,d2=0,diff =0 ;
+    scanf("%d",&n);
+    m = n;
+    int A[n][m];
+    int i = 0, j = 0;
+    for(i;i<n;i++){
+        j = 0;
+        for(j;j<m;j++){
+            scanf("%d",&A[i][j]);
+            if(i==j){
+                d1+= A[i][j];
+            }
+        }
+    }
+    j= n-1;
+    for(i=0 ; i<n;i++ ){
+        d2+= A[i][j];
+        j--;
+    }
+    
+    diff = d1 - d2;
+    if(diff<0){
+        diff = -diff;
+    }
+    printf("%d",diff);
+    
+}
